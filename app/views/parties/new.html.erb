@@ -1,0 +1,23 @@
+<%=form_with url: viewing_party_index_path, local: true, method: :post do |form| %>
+  <p>Movie Title: <%= @movie.title %></p>
+
+  <%=form.label :length, "Duration of Party" %>
+  <%=form.number_field :length, min: @movie["duration"], value: @movie["duration"], required: true %>
+
+  <%= form.label :date_of_party, "Day" %>
+  <%= form.date_field :date_of_party, data:{ provide:'datepicker' }, required: true #as: :date, value: form.object.try(:strftime,"%m/%d/%Y") %>
+
+  <%= form.label :time_of_party, "Start Time" %>
+  <%= form.time_field :time_of_party, required: true %>
+
+  <%= form.hidden_field :host_id, value: current_user.id %>
+  <%= form.hidden_field :movie, value: @movie[:id] %>
+
+  <p>Invite Friends</p>
+    <%= form.collection_check_boxes(:friends, current_user.friends, :id, :username, include_hidden: false) do |friend| %>
+      <%= friend.check_box %>
+      <%= friend.label %>
+    <% end %>
+
+  <%=form.submit "Create Party"%>
+<% end %>
