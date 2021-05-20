@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def index
     @user = current_user
-    # @hosting_party = @user.current_user_parties(@user) 
+    @hosting_party = @user.parties
     @watching_party = @user.invites
   end
 
