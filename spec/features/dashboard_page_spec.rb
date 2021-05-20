@@ -63,6 +63,7 @@ RSpec.describe 'Dashboard', type: :feature do
     end
 
     it 'can logout' do
+      expect(page).to have_content("Logged in as: #{@user.email}")
       click_link "Log Out"
       expect(page).to_not eq(dashboard_index_path)
       expect(page).to have_content("You have been logged out.")
