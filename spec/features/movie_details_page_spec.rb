@@ -24,14 +24,14 @@ RSpec.describe 'Movie Details', type: :feature do
       VCR.use_cassette('movie_details_page') do
       visit "/movies/675"
       expect(page).to have_button("Create Viewing Party For Movie")
-    #  expect(page).to have_content(titanic.title)
-    #  expect(page).to have_content(titanic.vote_average)
-    #  expect(page).to have_content(titanic.runtime)
-    #  expect(page).to have_content(titanic.genre)
-    #  expect(page).to have_content(titanic.summary)
-    #  expect(page).to have_content(titanic.cast_top_10)
-    #  expect(page).to have_content(titanic.total_reviews)
-    end
+      expect(page).to have_content("Harry Potter and the Order of the Phoenix")
+      expect(page).to have_content("138")
+      expect(page).to have_content("Adventure | Fantasy | Mystery |")
+      expect(page).to have_content("7.7")
+      expect(page).to have_content("14804")
+      expect(page).to have_content("Daniel Radcliffe.")
+      expect(page).to have_content("John Chard")
+      end
     end
   end
 end

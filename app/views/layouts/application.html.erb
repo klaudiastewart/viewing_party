@@ -12,10 +12,13 @@
 
   <body>
     <main>
+    <div class='direction'>
       <% if session[:user_id] %>
         <%= "Logged in as: #{current_user.email}" %>
         <%= link_to "Log Out", logout_path, method: :post %>
+        | <%= link_to "Home", dashboard_index_path%>
       <% end %>
+    </div>  
       <%= yield %>
       <% flash.each do |type, msg| %>
         <div class="alert alert-info">

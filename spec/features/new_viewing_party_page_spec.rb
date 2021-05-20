@@ -59,12 +59,10 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
 
       expect(current_path).to eq(dashboard_index_path)
 
-      within('#party_card') do
         expect(page).to have_content("#{@movie[:original_title]}")
         expect(page).to have_content("#{@movie[:runtime]} minutes")
         expect(page).to have_content("Date: #{Date.tomorrow.strftime("%m/%d/%Y")}")
         expect(page).to have_content("Time: #{Time.now.strftime("%H:%M")} UTC")
-      end
     end
 
     it 'I can click on a movie title on the dashboard page for a party I created and go to the movie show page' do

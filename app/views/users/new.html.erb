@@ -1,5 +1,6 @@
-<h1>Register</h1>
+<h1 class='welcome'>Register</h1>
 
+<section class="nav_buttons_three">
 <%= form_with model: @user, local: true do |f| %>
   <%= f.label :email, "Email: " %>
   <%= f.text_field :email%>
@@ -12,3 +13,4 @@
 
   <%= f.submit "Register" %>
 <% end %>
+</section>
