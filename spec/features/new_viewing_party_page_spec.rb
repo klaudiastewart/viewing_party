@@ -46,9 +46,12 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
 
   describe 'I can fill out a form and make a new party' do
     it 'I can fill out the form' do
+      @time_now = Time.now
+      allow(Time).to receive(:now).and_return(@time_now)
+
       fill_in :length, with: 132
       fill_in :date_of_party, with: Date.tomorrow
-      fill_in :time_of_party, with: Time.now
+      fill_in :time_of_party, with: @time_now 
       find(:css, "#friends_#{@user_2.id}").set(true)
       find(:css, "#friends_#{@user_3.id}").set(true)
 
@@ -56,15 +59,12 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
 
       expect(current_path).to eq(dashboard_index_path)
 
-      # within('#viewing_parties') do
-      #   expect(page).to have_content("#{@movie[:original_title]} Party")
-      #   expect(page).to have_content("#{@movie[:runtime]} minutes")
-      #   expect(page).to have_content("Hosted by: #{@user.email}")
-      #   expect(page).to have_content(@user_2.email)
-      #   expect(page).to have_content(@user_3.email)
-      #   expect(page).to have_content("Date: #{Date.tomorrow}")
-      #   expect(page).to have_content("Time: #{Time.now}")
-      # end
+      within('#viewing_parties') do
+        expect(page).to have_content("#{@movie[:original_title]}")
+        expect(page).to have_content("#{@movie[:runtime]} minutes")
+        expect(page).to have_content("Date: #{Date.tomorrow.strftime("%m/%d/%Y")}")
+        expect(page).to have_content("Time: #{Time.now.strftime("%H:%M")} UTC")
+      end
     end
   end
 end
