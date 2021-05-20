@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to dashboard_index_path(user_email: "#{user.email}")
     else
       flash[:error] = "Sorry, your credentials are bad."
-      render root_path
+      redirect_to "/"
     end
   end
 
