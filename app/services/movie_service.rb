@@ -2,7 +2,6 @@ class MovieService
   def self.conn
     Faraday.new(
     url: "https://api.themoviedb.org/3/",
-    # headers: {'Authorization' => api_key: "#{ENV['MOVIE_TOKEN']}"}
     params: { api_key: ENV['MOVIE_TOKEN'] }
     )
   end
@@ -16,7 +15,7 @@ class MovieService
     movie_list = page_1_json[:results] + page_2_json[:results]
   end
 
-   
+
   def self.list_movies_by_keyword(query)
     page_1= conn.get("search/movie?api_key=#{ENV['MOVIE_TOKEN']}&query=#{query}")
     page_1_json = JSON.parse(page_1.body, symbolize_names: true)
@@ -27,7 +26,7 @@ class MovieService
     selected_movie = conn.get("movie/#{id}?api_key=#{ENV['MOVIE_TOKEN']}&language=en-US")
     JSON.parse(selected_movie.body, symbolize_names: true)
   end
-  
+
   def self.return_single_movie_review(id)
     reviews = conn.get("movie/#{id}/reviews?api_key=#{ENV['MOVIE_TOKEN']}&language=en-US&page=1")
     JSON.parse(reviews.body, symbolize_names: true)
