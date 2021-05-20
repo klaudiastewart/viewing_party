@@ -61,5 +61,11 @@ RSpec.describe 'Dashboard', type: :feature do
       expect(@user.friends.count).to eq(0)
       expect(current_path).to eq(dashboard_index_path)
     end
+
+    it 'can logout' do
+      click_link "Log Out"
+      expect(page).to_not eq(dashboard_index_path)
+      expect(page).to have_content("You have been logged out.")
+    end
   end
 end
