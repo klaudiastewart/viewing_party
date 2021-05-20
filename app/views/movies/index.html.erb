@@ -1,11 +1,12 @@
-<h1>Welcome "@user"!</h1>
-
+<h1 class='welcome'>You've Found The Movies!</h1>
+<div class="nav_buttons_two">
 <%= button_to "Discover Top 40 Movies", movies_path, method: :get, params: {search_query: :top_40} %>
  <%=form_with url: movies_path, local: true, method: :get do |form| %>
     <%=form.label :search_text, "Enter Keyword(s) To Search By Movie Title:" %>
     <%=form.text_field  :search_text%>
     <%=form.submit "Find Movie"%>
   <%end%>
+</div>
 
 <section>
   <ul class="movies">
