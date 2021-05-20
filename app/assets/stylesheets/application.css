@@ -18,7 +18,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: 'Quicksand', sans-serif;
+  font-family: Verdana, sans-serif;
   background-image: url("/red.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ footer {
   box-shadow: -1px 0px 4px 0px black;}
 
 .title {
-  font-family: 'Handlee', cursive;
+  font-family: Verdana, sans-serif;
 }
 
 form {
@@ -165,7 +165,7 @@ a:hover {
   width: 323px;
 }
 
-/* .footer {  
+/* .footer {
    bottom : 2px;
    height : 40px;
    margin-top : 40px;
