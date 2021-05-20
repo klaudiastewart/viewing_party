@@ -164,3 +164,19 @@ a:hover {
 #login_form {
   width: 323px;
 }
+
+/* .footer {  
+   bottom : 2px;
+   height : 40px;
+   margin-top : 40px;
+   text-align: center;
+   vertical-align: middle;
+   position:fixed;
+   width:100%;
+} */
+
+footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}

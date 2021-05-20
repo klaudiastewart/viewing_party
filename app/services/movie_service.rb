@@ -1,5 +1,6 @@
 class MovieService
   def self.conn
+    put 'HELLO WORLD'
     Faraday.new(
     url: "https://api.themoviedb.org/3/",
     params: { api_key: ENV['MOVIE_TOKEN'] }
