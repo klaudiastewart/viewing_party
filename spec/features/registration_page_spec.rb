@@ -39,4 +39,3 @@ RSpec.describe 'Registration', type: :feature do
     end
   end
 end
-
