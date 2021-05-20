@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    
+
     @movie_list = if params[:search_text].present?
                     MovieService.list_movies_by_keyword(params[:search_text])
                   else
@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    
+
     @movie = MovieService.return_single_movie(params[:id])
     @reviews = MovieService.return_single_movie_review(params[:id])
     @cast = MovieService.return_single_movie_cast(params[:id])
