@@ -15,8 +15,8 @@ class UsersController < ApplicationController
       redirect_to dashboard_index_path(user_email: "#{new_user.email}", user_id: "#{new_user.id}")
     else
       #add a few conditionals for sad path, i.e. email already exists, p-words weren't the same...etc
-      flash.now[:error] = "Please make sure the passwords match"
-      render :new
+      flash[:error] = "Please make sure the passwords match"
+      redirect_to "/register"
     end
   end
 

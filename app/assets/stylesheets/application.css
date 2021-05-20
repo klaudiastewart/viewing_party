@@ -19,12 +19,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: 'Quicksand', sans-serif;
-  background-image: url("/movies.png");
+  background-image: url("/red.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  
+
 }
 
 main {
@@ -38,8 +38,8 @@ footer {
 }
 
 .welcome {
-  font-family: 'Handlee', cursive;
   font-size: 3rem;
+  text-align: center;
 }
 
 .nav_buttons {
@@ -48,8 +48,7 @@ footer {
     justify-self: center ;
     flex-direction: column;
     align-items: center;
-    background: rgba(128, 225, 244, .33);
-    max-width: 40%; 
+    background-color: rgb(0 0 0 / 82%);
     margin: auto;
     margin-bottom: 2rem;
 }
@@ -59,8 +58,8 @@ footer {
     justify-self: center ;
     flex-direction: column;
     align-items: center;
-    background: rgba(128, 225, 244, .33);
-    max-width: 50%; 
+    background-color: rgb(0 0 0 / 82%);
+    max-width: 50%;
     margin: auto;
     margin-bottom: 2rem;
 }
@@ -71,28 +70,30 @@ footer {
     justify-self: center ;
     flex-direction: column;
     align-items: center;
-    background: rgba(128, 225, 244, .33);
-    max-width: 75%; 
+    background-color: rgb(0 0 0 / 82%);
+    max-width: 75%;
     margin: auto;
     margin-bottom: 2rem;
 }
 .direction{
-  background-color:rgba(226, 117, 54, 0.33);
   text-align: right;
 }
 #login {
   display: flex;
   align-items: center;
   justify-self: center;
+  border-radius: 10px;
   text-align: center;
-  background-color:rgba(226, 117, 54, 0.33);
+  background-color: rgb(0 0 0 / 82%);
   flex-direction: column;
+  backdrop-filter: blur(6px);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem 4rem 2rem;
-}
+  list-style-type: circle;
+  box-shadow: -1px 0px 4px 0px black;}
 
 .title {
   font-family: 'Handlee', cursive;
@@ -100,12 +101,20 @@ footer {
 
 form {
   display: inline-flex;
+  flex-direction: column;
   padding-bottom: 1rem;
   padding-top: 1rem;
-}
+  align-items: flex-start;
+    }
 
 input {
-  font-family: 'Handlee', cursive;
+  font-family: sans-serif;
+  width: 200px;
+  height: 25px;
+  /* padding: 2px 5px; */
+  margin: 6px 0 20px 0;
+  border: none;
+  border-radius: 5px;
 }
 
 .dashboard_info {
@@ -114,11 +123,12 @@ input {
 }
 
 .card {
-    background-color:rgba(226, 117, 54, 0.33);
+  background-color: rgb(0 0 0 / 82%);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 35%;
+    max-width: 50%;
+    text-align: center;
 }
 
 img {
@@ -127,4 +137,46 @@ img {
 
 .movie_display{
   font-size: 8pt;
+}
+
+a:link {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer}
+
+a:visited {
+  color: blue;}
+
+a:hover {
+  color: white;
+  text-decoration: underline;}
+
+/* #login-button {
+  color: white;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 4px;
+  border-radius: 8px;
+  height: 50px;
+  background: #b73030;
+} */
+
+#login_form {
+  width: 323px;
+}
+
+/* .footer {  
+   bottom : 2px;
+   height : 40px;
+   margin-top : 40px;
+   text-align: center;
+   vertical-align: middle;
+   position:fixed;
+   width:100%;
+} */
+
+footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }

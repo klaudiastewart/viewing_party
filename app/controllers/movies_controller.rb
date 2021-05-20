@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   def index
-
     @movie_list = if params[:search_text].present?
                     MovieService.list_movies_by_keyword(params[:search_text])
                   else
