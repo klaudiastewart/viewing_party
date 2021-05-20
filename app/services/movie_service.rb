@@ -10,7 +10,7 @@ class MovieService
   def self.get_top_rated_movies
     page_1 = conn.get('/3/movie/top_rated?&page=1')
     page_2 = conn.get('/3/movie/top_rated?&page=2')
-
+    require "pry"; binding.pry
     page_1_json = JSON.parse(page_1.body, symbolize_names: true)
     page_2_json = JSON.parse(page_2.body, symbolize_names: true)
     movie_list = page_1_json[:results] + page_2_json[:results]
