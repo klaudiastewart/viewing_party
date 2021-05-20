@@ -9,7 +9,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-
     @movie = MovieService.return_single_movie(params[:id])
     @reviews = MovieService.return_single_movie_review(params[:id])
     @cast = MovieService.return_single_movie_cast(params[:id])
