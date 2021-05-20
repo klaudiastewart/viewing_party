@@ -17,11 +17,11 @@ RSpec.describe 'Descover', type: :feature do
         click_on("Discover Top 40 Movies")
         expect(current_path).to eq(movies_path)
       end
-      
+
       it "As an authenticated user,
       When I visit the '/discover' path
       I should see :
-      A text field to enter keyword(s) to search by movie title  
+      A text field to enter keyword(s) to search by movie title
       A Button to Search by Movie Title
       When the user clicks on the Search button they should be taken to the movies page." do
         visit discover_path
