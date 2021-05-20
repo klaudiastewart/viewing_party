@@ -19,5 +19,15 @@ RSpec.describe 'Welcome Page', type: :feature do
       expect(current_path).to eq("/dashboard")
       expect(page).to have_content("Welcome, #{user.email}!")
     end
+
+    it 'will not login if the users password is wrong' do
+      user = User.create!(email: "red", password: "1234", password_confirmation: "1234" )
+      visit root_path
+      fill_in :email, with: user.email
+      fill_in :password, with: 1
+      click_on("Log In")
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Sorry, your credentials are bad.")
+    end
   end
 end

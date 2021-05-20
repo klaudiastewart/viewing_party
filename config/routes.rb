@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/discover', to: 'discover#index'
   post '/', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
 
   resources :movies, only: [:index, :show]
   resources :users, only: [:new, :create]
