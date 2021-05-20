@@ -27,14 +27,14 @@
   </div>
 </section>
 
-<section id="viewing_parties">
+<section id="party_card">
   <h3>
     Viewing Parties
   </h3>
   <p>Parties you're invited to:</p>
     <ul><% @watching_party.each do |party| %>
       <li>
-        Title: <%= party.movie_title %> |
+        Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
         Duration: <%= party.length %> minutes |
         Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |
         Time: <%= party.time_of_party.strftime("%H:%M") %> UTC |
@@ -45,7 +45,7 @@
   <p>Parties you're hosting:</p>
   <ul><% @hosting_party.each do |party| %>
     <li>
-      Title: <%= party.movie_title %> |
+      Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
       Duration: <%= party.length %> minutes |
       Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |
       Time: <%= party.time_of_party.strftime("%H:%M") %> UTC
