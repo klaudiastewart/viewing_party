@@ -5,7 +5,7 @@ Viewing Party is an application that allows users to create a movie share party 
 ---
 ## Demo
 
-add gif
+[Demo](http://https://vimeo.com/552887742)
 
 ## Getting Started
 Please make sure to include these gems in your Gemfile. Once there, run `bundle` to install and update them.

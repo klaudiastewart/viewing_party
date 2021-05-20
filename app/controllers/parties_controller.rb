@@ -9,7 +9,7 @@ class PartiesController < ApplicationController
 
   def create
     @api_movie = MovieService.return_single_movie(params[:movie])
-    @movie = Movie.create!(title: "#{@api_movie[:original_title]}", api_id: "#{params[:movie]}")
+    @movie = Movie.create(title: "#{@api_movie[:original_title]}", api_id: "#{params[:movie]}")
     @viewing_party = @movie.parties.create!(party_params)
     if @viewing_party.save && !params[:friends].nil? && params[:length].to_i >= @api_movie[:runtime]
       params[:friends].each do |viewer_id|
