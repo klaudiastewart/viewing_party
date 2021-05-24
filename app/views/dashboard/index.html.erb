@@ -12,11 +12,13 @@
 
 <section class='dashboard_info'>
   <div>
-    <h2 class="title">Friends</h2>
+    <h2 class="friends">Friends</h2>
+    <div class='no-friends'>
     <% if @user.friends.count == 0 %>
       <h3>You currently have no friends. Why not add some now?<h3>
     <% else %>
-      <ul>
+    </div>
+      <ul class='have-friends'>
         <% @user.friends.uniq.each do |friend| %>
           <h3><span>&#x1F3A5</span> <%=friend.email %></h3>
         <% end %>
@@ -24,11 +26,12 @@
     <% end %>
   </div>
   <div>
-    <h2 class="title">Viewing Parties</h2>
+    <h2 class='vp-title'>Viewing Parties</h2>
     <div>
-    <h3 class="title">Parties you're invited to:</h3>
+    <h3 class='vp-title'>Parties you're invited to:</h3>
       <% @watching_party.each do |party| %>
         <p class='card'>
+          <%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %>
           Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
           Duration: <%= party.length %> minutes |
           Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |
@@ -38,9 +41,10 @@
         </p>
         </div>
         <div>
-    <h3 class="title">Parties you're hosting:</h3>
+    <h3 class='vp-title'>Parties you're hosting:</h3>
     <% @hosting_party.each do |party| %>
-      <p class="card">
+      <p class='card'>
+        <%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %>
         Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
         Duration: <%= party.length %> minutes |
         Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |

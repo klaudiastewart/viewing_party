@@ -43,14 +43,20 @@ footer {
 }
 
 .nav_buttons {
-    display: flex;
-    justify-content: center;
-    justify-self: center ;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    margin: auto;
-    margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+  text-align: center;
+  background-color: black;
+  flex-direction: column;
+  backdrop-filter: blur(6px);
+  top: 50%;
+  left: 50%;
+  list-style-type: circle;
+  box-shadow: -1px 0px 4px 0px black;
+  opacity: 0.90;
+
 }
 .nav_buttons_two {
     display: flex;
@@ -93,10 +99,60 @@ footer {
   transform: translate(-50%, -50%);
   padding: 1rem 4rem 2rem;
   list-style-type: circle;
-  box-shadow: -1px 0px 4px 0px black;}
+  box-shadow: -1px 0px 4px 0px black;
+  opacity: 0.90;
+}
 
-.title {
-  font-family: 'Handlee', cursive;
+.card {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  opacity: .90;
+  backdrop-filter: blur(6px);
+  box-shadow: -1px 0px 4px 0px black;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  padding: 1rem 4rem 2rem;
+  list-style-type: circle;
+  width: 450px;
+}
+
+.vp-title{
+  text-align: center;
+}
+
+.have-friends{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  opacity: .90;
+  backdrop-filter: blur(6px);
+  box-shadow: -1px 0px 4px 0px black;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  padding: 1rem 4rem 2rem;
+  list-style-type: circle;
+}
+
+.dashboard_info {
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: black;
+    opacity: .85; */
+}
+
+.friends{
+  text-align: center;
 }
 
 form {
@@ -117,20 +173,6 @@ input {
   border-radius: 5px;
 }
 
-.dashboard_info {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card {
-  background-color: black;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 50%;
-    text-align: center;
-}
-
 img {
   max-width: 10%;
 }
@@ -140,12 +182,12 @@ img {
 }
 
 a:link {
-  color: blue;
+  color: CornflowerBlue;
   text-decoration: none;
   cursor: pointer}
 
 a:visited {
-  color: blue;}
+  color: CornflowerBlue;}
 
 a:hover {
   color: white;
