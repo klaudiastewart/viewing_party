@@ -1,22 +1,24 @@
-<%= form_with url: parties_path, local: true, method: :post do |form| %>
-    <p>Movie Title: <%= @movie[:original_title] %></p>
-    
-    <%=form.label :length, "Duration of Party" %>
-    <%=form.number_field :length, min: @movie[:runtime], value: @movie[:runtime], required: true %><br>
+<section>
+    <%= form_with url: parties_path, local: true, method: :post do |form| %>
+      <p>Movie Title: <%= @movie[:original_title] %></p>
 
-    <%= form.label :date_of_party, "Day" %>
-    <%= form.date_field :date_of_party, data:{ provide:'datepicker' }, required: true %><br>
+      <%=form.label :length, "Duration of Party" %>
+      <%=form.number_field :length, min: @movie[:runtime], value: @movie[:runtime], required: true %><br>
 
-    <%= form.label :time_of_party, "Start Time" %>
-    <%= form.time_field :time_of_party, required: true %><br>
+      <%= form.label :date_of_party, "Day" %>
+      <%= form.date_field :date_of_party, data:{ provide:'datepicker' }, required: true %><br>
 
-    <%= form.hidden_field :host_id, value: current_user.id %>
-    <%= form.hidden_field :movie, value: @movie[:id] %><br>
+      <%= form.label :time_of_party, "Start Time" %>
+      <%= form.time_field :time_of_party, required: true %><br>
 
-    <u>Invite Friends</u><br>
-    <%= form.collection_check_boxes(:friends, current_user.friends, :id, :email, include_hidden: false) do |friend| %>
-      <%= friend.check_box %>
-      <%= friend.label %>
-    <% end %><br>
-  <%= form.submit "Create Party"%>
-<% end %>
+      <%= form.hidden_field :host_id, value: current_user.id %>
+      <%= form.hidden_field :movie, value: @movie[:id] %><br>
+
+      <u>Invite Friends</u><br>
+      <%= form.collection_check_boxes(:friends, current_user.friends, :id, :email, include_hidden: false) do |friend| %>
+        <%= friend.check_box %>
+        <%= friend.label %>
+      <% end %><br>
+    <%= form.submit "Create Party"%>
+  <% end %>
+</section>

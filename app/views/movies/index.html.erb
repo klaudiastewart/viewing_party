@@ -1,4 +1,4 @@
-<h1 class='welcome'>You've Found The Movies!</h1>
+<h1 class='welcome'><%= "You've Found #{@movie_list.count} Movies!" %></h1>
 <div class="nav_buttons_two">
 <%= button_to "Discover Top 40 Movies", movies_path, method: :get, params: {search_query: :top_40} %>
  <%=form_with url: movies_path, local: true, method: :get do |form| %>
@@ -9,12 +9,12 @@
 </div>
 
 <section>
-  <ul class="movies">
+  <ol class="movies">
     <% @movie_list.each do |movie| %>
       <li id="movie-<%= movie[:id] %>">
         <%= link_to "#{movie[:original_title]}", "/movies/#{movie[:id]}" %>,
         Vote Average: <%= movie[:vote_average] %>
       </li>
     <% end %>
-  </ul>
+  </ol>
 </section>

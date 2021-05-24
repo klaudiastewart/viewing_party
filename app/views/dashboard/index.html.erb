@@ -29,10 +29,11 @@
     <h2 class='vp-title'>Viewing Parties</h2>
     <div>
     <h3 class='vp-title'>Parties you're invited to:</h3>
+      <div class='card'>
       <% @watching_party.each do |party| %>
-        <p class='card'>
-          <%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %>
-          Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
+        <div class='poster'><%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %></div>
+        <p>
+          <p>Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> </p>
           Duration: <%= party.length %> minutes |
           Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |
           Time: <%= party.time_of_party.strftime("%H:%M") %> UTC |
@@ -41,16 +42,19 @@
         </p>
         </div>
         <div>
+      </div>
     <h3 class='vp-title'>Parties you're hosting:</h3>
+    <div class='card'>
     <% @hosting_party.each do |party| %>
-      <p class='card'>
-        <%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %>
-        Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %> |
+      <div class='img.poster'><%= image_tag "https://image.tmdb.org/t/p/w500/#{MovieService.return_single_movie(Movie.find(party.movie_id).api_id)[:backdrop_path]}" %></div>
+      <p>
+        <p>Title: <%= link_to "#{party.movie_title}", "/movies/#{party.movie.api_id}", method: :get %></p>
         Duration: <%= party.length %> minutes |
         Date: <%= party.date_of_party.strftime("%m/%d/%Y") %> |
         Time: <%= party.time_of_party.strftime("%H:%M") %> UTC
       <% end %>
       </p>
+    </div>
     </div>
     </div>
 </section>

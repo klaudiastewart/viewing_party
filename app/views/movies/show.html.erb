@@ -1,34 +1,36 @@
-<section class='movie_display'>
+<section>
 <h1 class='welcome'>Welcome, <%="#{current_user[:email]}!"%></h1>
-<%= button_to "Create Viewing Party For Movie", "/parties/new", params: { :movie_id => params[:id] }, method: :get %>
-<h2>Title: <%=@movie[:original_title] %></h2>
-<%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie[:poster_path]}" %>
-<h2>Runtime: <%=@movie[:runtime] %></h2>
-<% if @movie[:genres] == nil || @movie[:genres] == [] %>
-    <h2>Your selected movie has no genre content.</h2>
-  <% else %>
-    <h2>Genre:<%@movie[:genres].each do |genre| %> <%=genre[:name]%> | <%end%></h2>
-<%end%>
-<h2>Summary: <%=@movie[:overview] %></h2>
-  <% if @movie[:vote_average] == nil || @movie[:vote_average] == 0.0 %>
-    <h2>Your selected movie has no vote average.</h2>
-  <% else %>
-    <h2>Vote Average: <%=@movie[:vote_average]%></h2>
+<div class='movie_display'>
+  <%= button_to "Create Viewing Party For Movie", "/parties/new", params: { :movie_id => params[:id] }, method: :get %>
+  <h2> <%=@movie[:original_title] %></h2>
+  <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie[:poster_path]}" %>
+  <p>Runtime: <%=@movie[:runtime] %></p>
+  <% if @movie[:genres] == nil || @movie[:genres] == [] %>
+      <p>Your selected movie has no genre content.</p>
+    <% else %>
+      <p>Genre:<%@movie[:genres].each do |genre| %> <%=genre[:name]%>  <%end%></p>
   <%end%>
-  <% if @movie[:vote_count] == nil || @movie[:vote_count] == 0.0 %>
-    <h2>Your selected movie has no vote counts.</h2>
-  <% else %>
-    <h2>Vote Count: <%=@movie[:vote_count]%></h2>
-  <%end%>
-<h2>Characters and Cast: <%@cast[:cast].take(10).map do |member|%>
-                          <h2><%="#{member[:character]} is played by Actor(ess) #{ member[:name]}."%></h2>
-                          <%end%>
-  <% if @reviews[:results] == nil || @reviews[:results] == [] %>
-    <h2>Your selected movie has no review content.</h2>
-  <% else %>
-    <h2>Reviews: <%@reviews[:results].each do |result|%><h2>
-      <h2>Author: <%=result[:author]%><h2>
-      <h2>Content: <%=result[:content]%><h2>
+  <p>Summary: <%=@movie[:overview] %></p>
+    <% if @movie[:vote_average] == nil || @movie[:vote_average] == 0.0 %>
+      <p>Your selected movie has no vote average.</p>
+    <% else %>
+      <p>Vote Average: <%=@movie[:vote_average]%></p>
     <%end%>
-  <%end%>
+    <% if @movie[:vote_count] == nil || @movie[:vote_count] == 0.0 %>
+      <p>Your selected movie has no vote counts.</p>
+    <% else %>
+      <p>Vote Count: <%=@movie[:vote_count]%></p>
+    <%end%>
+  <p>Characters and Cast: <%@cast[:cast].take(10).map do |member|%>
+                            <p><%="#{member[:character]} is played by Actor(ess) #{ member[:name]}."%></p>
+                            <%end%>
+    <% if @reviews[:results] == nil || @reviews[:results] == [] %>
+      <p>Your selected movie has no review content.</p>
+    <% else %>
+      <p>Reviews: <%@reviews[:results].each do |result|%><p>
+        <p>Author: <%=result[:author]%><p>
+        <p>Content: <%=result[:content]%><p>
+      <%end%>
+    <%end%>
+  </div>
 </section>
