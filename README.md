@@ -5,7 +5,6 @@ Viewing Party is an application that allows users to create a movie share party 
 ---
 ## Demo
 
-[Demo Video](http://https://vimeo.com/552887742)
 ![d2](https://i.ibb.co/Tgz82qz/Screen-Shot-2021-05-27-at-9-47-24-PM.png)
 ![d3](https://i.ibb.co/7jfc6dn/Screen-Shot-2021-05-27-at-9-47-45-PM.png)
 
