@@ -1,6 +1,6 @@
 # Viewing Party
 
-Viewing Party is an application that allows users to create a movie share party with their friends. Simply open the application, find a movie you want to watch, add friends to that watch party, and sit back and enjoy the show!
+[Viewing Party](https://viewing-party-0519.herokuapp.com/) is an application that allows users to create a movie share party with their friends. Simply open the application, find a movie you want to watch, add friends to that watch party, and sit back and enjoy the show!
 
 ---
 ## Demo
@@ -32,7 +32,7 @@ Run all tests in application with `bundle exec rspec`. When test is complete, ru
 
 ## Deployment
 
-- Add Heroku app link
+- [Heroku](https://viewing-party-0519.herokuapp.com/)
 - If you'd like to run this app locally, run `rails s` and navigate to `http://localhost:3040/` in your browser.
 
 In order to use this application, you need to register for a [MovieDB API Key](https://www.themoviedb.org/settings/api). Once you have the key, use command `bundle exec install figaro`. This creates the file `config/application.yml`. In `application.yml`, add `MOVIE_TOKEN: <your MovieDB api key>`.
