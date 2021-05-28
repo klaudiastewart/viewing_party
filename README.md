@@ -3,7 +3,7 @@
 [Viewing Party](https://viewing-party-0519.herokuapp.com/) is an application that allows users to create a movie share party with their friends. Simply open the application, find a movie you want to watch, add friends to that watch party, and sit back and enjoy the show!
 
 ---
-## Demo
+## Screenshots
 
 ![d2](https://i.ibb.co/Tgz82qz/Screen-Shot-2021-05-27-at-9-47-24-PM.png)
 ![d3](https://i.ibb.co/7jfc6dn/Screen-Shot-2021-05-27-at-9-47-45-PM.png)
