@@ -44,8 +44,8 @@ In order to use this application, you need to register for a [MovieDB API Key](h
 
 ## Built By
 
-- [Jahara Clark](https://github.com/jaharaclark)
 - [Klaudia Stewart](https://github.com/klaudiastewart)
+- [Jahara Clark](https://github.com/jaharaclark)
 
 
 ## Acknowledgments
