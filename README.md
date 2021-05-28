@@ -8,7 +8,6 @@ Viewing Party is an application that allows users to create a movie share party 
 [Demo Video](http://https://vimeo.com/552887742)
 ![d1](https://i.ibb.co/Kh7F6kT/Screen-Shot-2021-05-27-at-9-46-16-PM.png)
 ![d2](https://i.ibb.co/Tgz82qz/Screen-Shot-2021-05-27-at-9-47-24-PM.png)
-![d3](https://i.ibb.co/7jfc6dn/Screen-Shot-2021-05-27-at-9-47-45-PM.png)
 
 ## Getting Started
 Please make sure to include these gems in your Gemfile. Once there, run `bundle` to install and update them.
